@@ -1,11 +1,20 @@
-# README
+# 12 weeks 12 apps challenge
 
+## Week 1 - Simple bookshelf 
 
-`rails new week1`
+### Goal
+- CRUD for books
+- Boostrap and styling
 
-`cd week1`
+### Want to follow me? 
 
-`rails generate model Book name:string author:string`
+Having a working environment with rails installed, just follow this step by step and you will have your brand new rails application.
+
+`$ rails new week1`
+
+`$ cd week1`
+
+`$ rails generate model Book name:string author:string`
 
 Edit db/seeds.rb
 
@@ -15,13 +24,13 @@ Book.create( name:"Zen principle", author:"Osho" )
 Book.create( name:"The White Cat and the Monk", author:"Jo Ellen Bogart" )
 ```
 
-`rake db:migrate`
+`$ rake db:migrate`
 
-`rake db:seed`
+`$ rake db:seed`
 
 Quicky test the DB
 
-`rails dbconsole`
+`$ rails dbconsole`
 
 ```
 SQLite version 3.16.0 2016-11-04 19:09:39
@@ -39,7 +48,7 @@ sqlite> .exit
 
 Quicky test the Rails environment
 
-`rails console`
+`$ rails console`
 
 ```
 Running via Spring preloader in process 22819
@@ -57,7 +66,9 @@ irb(main):002:0> Book.first
 irb(main):003:0> 
 ```
 
-`rails generate controller Books`
+Now the controller to put some life in our model:
+
+`$ rails generate controller Books`
 
 Add the *index action* at **app/controllers/book_controller.rb**:
 
@@ -70,7 +81,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Create view **app/views/books/index.html.erb**:
+Create a view **app/views/books/index.html.erb**:
 
 ```
 <% Book.all.each do |bk| %>
@@ -79,4 +90,23 @@ Create view **app/views/books/index.html.erb**:
 
 <% end %>
 ```
+
+Add the route so Rails can understand where and how is things connected:
+
+Edit **config/routes.rb** and add:
+
+```rb
+get '/books', to: 'books#index'
+```
+
+We define the method, then the URL and finally the controller and action.
+
+Run the Rails server on your application:
+
+`$ rails s`
+
+Go to your browser and access: `http://localhost:3000/books`
+
+Do you see the list? :)
+
 
