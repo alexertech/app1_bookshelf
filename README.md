@@ -7,7 +7,7 @@
 - CRUD for books
 - Boostrap and styling
 
-### Follow the steps and you will be done
+**You can do it too**
 
 Having a working environment with rails installed, just follow this step by step and you will have your brand new rails application.
 
