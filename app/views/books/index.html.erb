@@ -1,7 +1,8 @@
 <% Book.all.each do |bk| %>
 
-    [<%= link_to  "-", books_del_path(bk) %>]
+    [<%= link_to  "e", edit_book_path(bk) %>]
+    [<%= link_to  "d", book_path(bk), method: :delete %>]
     Name: <%=bk.name%>, Author <%=bk.author%> <br>
 
 <% end %>
-<%= link_to  "New", books_new_path %>
+<%= link_to  "New", new_book_path %>
