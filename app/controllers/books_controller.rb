@@ -15,7 +15,14 @@ class BooksController < ApplicationController
         else
             redirect_to new
         end
+    end
 
+    def delete
+        @book = find_book
+
+        @book.delete
+
+        redirect_to books_path
     end
 
     private
@@ -23,4 +30,9 @@ class BooksController < ApplicationController
     def book_params
         params.require(:book).permit(:name,:author)
     end
+
+    def find_book
+        @book = Book.find(params[:id])
+    end
+    
 end
