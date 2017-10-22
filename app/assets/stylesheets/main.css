@@ -1,0 +1,12 @@
+.bgmain { 
+    background-color : #333333; 
+    color            : #ffffff;
+}
+.bgmain a {
+    color            : aqua;
+    text-decoration  : none;
+}
+.bgmain input {
+    color            : #333333;
+    background-color : #ffffff; 
+}

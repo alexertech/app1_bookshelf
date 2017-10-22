@@ -1,11 +1,22 @@
 <%= form_for @book do |f| %>
 
-    <%=f.label :name %>
-    <%=f.text_field :name %>
+    <div class="row">
 
-    <%=f.label :author %>
-    <%=f.text_field :author %>
+        <div class="col-md-3">
+            <%=f.label :name %>
+        </div>
+        <div class="col-md-9">
+            <%=f.text_field :name %>
+        </div>
+        <div class="col-md-3">
+            <%=f.label :author %>
+        </div>
+        <div class="col-md-9">
+            <%=f.text_field :author %>
+        </div>
 
-    <%=f.submit%>
-
+        <div class="col-md-12">
+            <%=f.submit%>
+        </div>
+    </div>
 <% end %>
